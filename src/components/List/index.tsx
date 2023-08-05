@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.scss";
+import style from "./List.module.scss";
 
 function List() {
   const tarefas = [
@@ -31,11 +31,11 @@ function List() {
   ];
 
   return (
-    <aside className="listaTarefas">
+    <aside className={style.listaTarefas}>
       <h2>Lista de tarefas</h2>
       <ul>
         {tarefas.map((tarefa, index) => (
-          <li key={tarefa.id} className="item">
+          <li key={tarefa.id} className={style.item}>
             <h3>{tarefa.nome}</h3>
             <span>{tarefa.tempo}</span>
           </li>

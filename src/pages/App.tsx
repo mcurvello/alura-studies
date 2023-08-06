@@ -23,7 +23,7 @@ function App() {
     <div className={style.AppStyle}>
       <Forms setTarefas={setTarefas} />
       <List tarefas={tarefas} selecionaTarefa={selecionaTarefa} />
-      <Cron />
+      <Cron selecionado={selecionado} />
     </div>
   );
 }

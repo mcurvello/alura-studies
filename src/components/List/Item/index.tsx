@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../List.module.scss";
+import style from "./Item.module.scss";
 import { ITarefa } from "../../../types/tarefa";
 
 interface Props extends ITarefa {

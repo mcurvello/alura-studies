@@ -19,11 +19,29 @@ function App() {
     );
   }
 
+  function finalizarTarefa() {
+    if (selecionado) {
+      setSelecionado(undefined);
+      setTarefas((tarefasAnteriores) =>
+        tarefasAnteriores.map((tarefa) => {
+          if (tarefa.id === selecionado.id) {
+            return {
+              ...tarefa,
+              selecionado: false,
+              finalizada: true,
+            };
+          }
+          return tarefa;
+        })
+      );
+    }
+  }
+
   return (
     <div className={style.AppStyle}>
       <Forms setTarefas={setTarefas} />
       <List tarefas={tarefas} selecionaTarefa={selecionaTarefa} />
-      <Cron selecionado={selecionado} />
+      <Cron selecionado={selecionado} finalizarTarefa={finalizarTarefa} />
     </div>
   );
 }
